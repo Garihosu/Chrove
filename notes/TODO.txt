@@ -1,0 +1,12 @@
+[*] player anim/control
+[*] fix player collision
+[*] setup interaction with objects/npcs
+[] dialogue/ui
+[] room switching
+[] stat system
+[] battle menu
+[] battle logic
+[] battle visuals
+[] inventory
+[] party system
+[] cutscene system
