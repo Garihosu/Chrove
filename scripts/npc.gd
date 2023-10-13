@@ -1,14 +1,19 @@
 extends CharacterBody2D
 
+@export var player: CharacterBody2D
+
 @export var direction = "down"
 
-var dialogue = [
+@export var d_spd = 2
+
+@export var dialogue = [
 	"Sup.",
 	"How you doin?"
 ]
 
 func doAction():
-	Global.trigger_dialogue(dialogue)
+	direction = Global.opposite(player.direction)
+	player.trigger_dialogue(dialogue, d_spd)
 
 func _process(delta):
 	if direction == "up":

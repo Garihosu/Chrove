@@ -3,6 +3,8 @@ extends CharacterBody2D
 # TODO: add keybinds to specific variable
 #
 
+@export var d_box: Panel
+
 const SPEED = 1
 const RUN = .5
 
@@ -22,24 +24,29 @@ func _process(delta):
 		
 	$AnimationPlayer.speed_scale = m+.2
 	
-	if Input.is_key_pressed(KEY_LEFT):
-		position.x -= m
-		direction = "left"
-		moving = true
-	if Input.is_key_pressed(KEY_RIGHT):
-		position.x += m
-		direction = "right"
-		moving = true
-	if Input.is_key_pressed(KEY_UP):
-		position.y -= m
-		direction = "up"
-		moving = true
-	if Input.is_key_pressed(KEY_DOWN):
-		position.y += m
-		direction = "down"
-		moving = true
-	if Input.is_action_just_pressed("interact") and obj_col != null:
-		obj_col.doAction()
+	if not get_tree().paused:
+		if Input.is_key_pressed(KEY_LEFT):
+			position.x -= m
+			direction = "left"
+			moving = true
+		if Input.is_key_pressed(KEY_RIGHT):
+			position.x += m
+			direction = "right"
+			moving = true
+		if Input.is_key_pressed(KEY_UP):
+			position.y -= m
+			direction = "up"
+			moving = true
+		if Input.is_key_pressed(KEY_DOWN):
+			position.y += m
+			direction = "down"
+			moving = true
+	if Input.is_action_just_pressed("interact"):
+		if d_box.is_dialogue:
+			d_box.next_dialogue()
+		else:	
+			if obj_col != null:
+				obj_col.doAction()
 		
 	move_and_collide(Vector2(0,0))
 	
@@ -61,6 +68,9 @@ func _process(delta):
 			$AnimationPlayer.play("idle_left")
 		if direction == "right":
 			$AnimationPlayer.play("idle_right")
+
+func trigger_dialogue(dialogue, spd):
+	d_box.show_dialogue(dialogue, spd)
 
 func _on_interact_area_body_entered(body):
 	print("entered: " + body.name)
