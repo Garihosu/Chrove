@@ -15,7 +15,7 @@ var obj_col = null
 
 @onready var collisionShape = $CollisionShape2D
 
-func _process(delta):
+func _process(_delta):
 	var m = SPEED
 	moving = false
 	
@@ -44,9 +44,10 @@ func _process(delta):
 	if Input.is_action_just_pressed("interact"):
 		if d_box.is_dialogue:
 			d_box.next_dialogue()
-		else:	
-			if obj_col != null:
-				obj_col.doAction()
+		else:
+			if not get_tree().paused:
+				if obj_col != null:
+					obj_col.doAction()
 		
 	move_and_collide(Vector2(0,0))
 	

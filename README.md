@@ -1,9 +1,13 @@
 # Chrove
 
-A crappy RPG engine for Godot. Nothing else to say.
+A top-down RPG engine for Godot.
 
-Used for the game The World is a Machine.
+Used for the game The World is a Machine, and possibly others. The battle system
+is an Earthbound-like turn-based system.
 
-Rather than being used for _other people's_ use, this is mostly
-so I can get some help in. I mean, just take a look at my code and you'll see.
-If it improves to the point where it's actually usable—then maybe, who knows.
+This engine is not really intended for the works of other people—while it still
+could be used for so—and is open-source so that I may get some help and feedback
+on the project so that I can make the upcoming game smooth and usable.
+
+Please use Godot v4.0.4. As far as I've tested, the newer versions are kinda broken,
+or just didn't run well on my computer. 

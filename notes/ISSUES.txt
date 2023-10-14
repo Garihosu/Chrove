@@ -1,0 +1,2 @@
+1. Cannot load outside resources properly (probably a Godot issue)
+2. Dialogue choice system not working

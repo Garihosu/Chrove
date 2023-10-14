@@ -18,12 +18,13 @@ position = Vector2(289, 141)
 motion_mode = 1
 player = NodePath("../Player")
 direction = "left"
+dialogue = ["• Sup.", "• How you doin?"]
 
 [node name="test_npc2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_bu47x")]
 position = Vector2(229, 96)
 motion_mode = 1
 player = NodePath("../Player")
-dialogue = ["Well, don't you think that you should press \"z\"?", "Wow! You figured it out!", "Uh... This doesn't branch yet by the way."]
+dialogue = ["• Well, don't you think that you should press \"z\"?", 1, "Yes", "No", "• Wow! You figured it out!", "• Uh... This doesn't branch yet by the way."]
 
 [node name="Player" parent="." instance=ExtResource("2_yicuj")]
 process_mode = 3

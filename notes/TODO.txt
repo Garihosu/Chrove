@@ -1,7 +1,7 @@
 [*] player anim/control
 [*] fix player collision
 [*] setup interaction with objects/npcs
-[] dialogue/ui
+[1/2] dialogue/ui
 [] room switching
 [] stat system
 [] battle menu

@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://c1a0tc5wxqx7d"]
+[gd_scene load_steps=17 format=3 uid="uid://c1a0tc5wxqx7d"]
 
 [ext_resource type="Texture2D" uid="uid://vry0nfvnxkba" path="res://art/blank_character.png" id="1_7sofn"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_wmd2e"]
 [ext_resource type="Script" path="res://scripts/dialogue_manager.gd" id="2_71bip"]
 [ext_resource type="FontFile" uid="uid://cbgsurkq10mfc" path="res://art/Silver.ttf" id="2_d7wnx"]
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="4_5t8fi"]
 
 [sub_resource type="Animation" id="Animation_1ay0o"]
 length = 0.001
@@ -114,7 +115,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [2]
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_r66ty"]
@@ -271,6 +272,89 @@ theme_override_font_sizes/font_size = 18
 text = "• please do not question this sample dialogue"
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="Choice1" type="Panel" parent="Camera2D/CanvasLayer/DialogueBox"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -25.0
+offset_right = 60.0
+
+[node name="Label" type="Label" parent="Camera2D/CanvasLayer/DialogueBox/Choice1"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 1.99992
+offset_right = 47.0
+offset_bottom = 25.9999
+theme_override_fonts/font = ExtResource("2_d7wnx")
+theme_override_font_sizes/font_size = 18
+text = "Yes"
+
+[node name="Choice2" type="Panel" parent="Camera2D/CanvasLayer/DialogueBox"]
+layout_mode = 0
+offset_left = 69.0
+offset_top = -25.0
+offset_right = 128.0
+
+[node name="Label" type="Label" parent="Camera2D/CanvasLayer/DialogueBox/Choice2"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 1.99992
+offset_right = 46.0
+offset_bottom = 25.9999
+theme_override_fonts/font = ExtResource("2_d7wnx")
+theme_override_font_sizes/font_size = 18
+text = "No"
+
+[node name="Choice3" type="Panel" parent="Camera2D/CanvasLayer/DialogueBox"]
+layout_mode = 0
+offset_left = 136.0
+offset_top = -25.0
+offset_right = 195.0
+
+[node name="Label" type="Label" parent="Camera2D/CanvasLayer/DialogueBox/Choice3"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 2.0
+offset_right = 45.0
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("2_d7wnx")
+theme_override_font_sizes/font_size = 18
+text = "Maybe"
+
+[node name="Choice4" type="Panel" parent="Camera2D/CanvasLayer/DialogueBox"]
+layout_mode = 0
+offset_left = 202.0
+offset_top = -25.0001
+offset_right = 255.035
+offset_bottom = -7.62939e-05
+
+[node name="Label" type="Label" parent="Camera2D/CanvasLayer/DialogueBox/Choice4"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 1.0
+offset_right = 45.0
+offset_bottom = 25.0
+theme_override_fonts/font = ExtResource("2_d7wnx")
+theme_override_font_sizes/font_size = 18
+text = "..."
+
+[node name="PauseMenu" type="Panel" parent="Camera2D/CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_5t8fi")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Camera2D/CanvasLayer/PauseMenu"]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 18.0
+offset_right = 206.0
+offset_bottom = 44.0
+text = "Paused (lol)"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 y_sort_enabled = true

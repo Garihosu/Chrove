@@ -15,7 +15,7 @@ func doAction():
 	direction = Global.opposite(player.direction)
 	player.trigger_dialogue(dialogue, d_spd)
 
-func _process(delta):
+func _process(_delta):
 	if direction == "up":
 		$AnimationPlayer.play("idle_up")
 	if direction == "down":
